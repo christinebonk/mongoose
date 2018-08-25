@@ -6,6 +6,14 @@ var cheerio = require("cheerio");
 
 function routes(app) {
 
+  app.get("/", function(req, res){
+    res.render("index");
+  });
+
+  app.get("/myarticles", function(req, res){
+    res.render("saved", {title: "Saved Articles"});
+  });
+
   app.get("/scrape", function(req, res) {
     request("https://www.jacobinmag.com/blog", function(error, response, body) {
       var $ = cheerio.load(body);

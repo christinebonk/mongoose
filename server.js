@@ -12,8 +12,10 @@ var routes = require("./controllers/controllers.js");
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.engine("handlebars", exphbs({defaultLayout: "main"}));
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+app.use(express.static("public"));
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
