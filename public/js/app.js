@@ -21,3 +21,6 @@ $(".article-delete").on("click", "#delete", function(){
 });
 
 
+$(document).ready(function(){
+    $('.modal').modal();
+  });
