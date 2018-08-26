@@ -1,0 +1,17 @@
+{{#each saved}}
+	<article>
+	<aside>
+		<img src={{this.image}} alt={{this.title}}>
+	</aside>
+	<div class="article-middle">
+		<a href="https://www.jacobinmag.com{{this.link}}" target="_blank">
+			<h2>{{this.title}}</h2>
+		</a>
+		<h3>{{this.author}}</h3>
+		<p>{{this.summary}}</p>
+	</div>
+	<div class="article-save">
+		  <i id="delete" class="material-icons">delete</i>
+	</div>
+	</article>
+{{/each}}

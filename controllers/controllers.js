@@ -7,12 +7,40 @@ var cheerio = require("cheerio");
 function routes(app) {
 
   app.get("/", function(req, res){
-    res.render("index");
+    db.Article.find({})
+      .then(function(dbArticle) {
+        var aObj = { articles: dbArticle }
+        res.render("index", aObj)
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+    
+  });
+
+  app.get("/a", function(req, res){
+    db.Article.find({})
+      .then(function(dbArticle) {
+        var aObj = { articles: dbArticle }
+        res.render("index", aObj)
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
   });
 
   app.get("/myarticles", function(req, res){
-    res.render("saved", {title: "Saved Articles"});
+    db.Article.find({saved: true})
+      .then(function(dbArticle) {
+        var sObj = { saved: dbArticle }
+        res.render("saved", sObj);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
   });
+
+
 
   app.get("/scrape", function(req, res) {
     request("https://www.jacobinmag.com/blog", function(error, response, body) {
@@ -53,25 +81,7 @@ function routes(app) {
     });
   });
 
-  app.get("/articles", function(req, res) {
-    db.Article.find({})
-      .then(function(dbArticle) {
-        res.json(dbArticle);
-      })
-      .catch(function(err) {
-        res.json(err);
-      });
-  });
-
-  app.get("/saved", function(req, res) {
-    db.Article.find({saved: true})
-      .then(function(dbArticle) {
-        res.json(dbArticle);
-      })
-      .catch(function(err) {
-        res.json(err);
-      });
-  });
+  
 
   app.get("/articles/:id", function(req, res) {
     db.Article.findOne({ _id: req.params.id })
