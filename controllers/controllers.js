@@ -6,6 +6,10 @@ var cheerio = require("cheerio");
 
 function routes(app) {
 
+  app.get("/test", function(req,res) {
+    res.render("index");
+  })
+
   app.get("/", function(req, res){
     db.Article.find({}).sort('-created_at')
       .then(function(dbArticle) {
@@ -17,16 +21,6 @@ function routes(app) {
       });
   });
 
-  app.get("/a", function(req, res){
-    db.Article.find({}).sort('-created_at')
-      .then(function(dbArticle) {
-        var aObj = { articles: dbArticle }
-        res.render("index", aObj)
-      })
-      .catch(function(err) {
-        res.json(err);
-      });
-  });
 
   app.get("/myarticles", function(req, res){
     db.Article.find({saved: true})
