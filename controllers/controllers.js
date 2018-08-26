@@ -11,7 +11,7 @@ function routes(app) {
   });
 
   app.get("/a", function(req, res){
-    db.Article.find({})
+    db.Article.find({}).sort('-created_at')
       .then(function(dbArticle) {
         var aObj = { articles: dbArticle }
         res.render("index", aObj)
@@ -35,7 +35,6 @@ function routes(app) {
   app.get("/scrape", function(req, res) {
     request("https://www.jacobinmag.com/blog", function(error, response, body) {
       var $ = cheerio.load(body);
-
       $("article").each(function(i, element) {
       	var result = {};
 
@@ -59,13 +58,11 @@ function routes(app) {
   		.find(".ar-mn__frame")
   		.find("img")
   		.attr("src");
-        
   		db.Article.create(result)
   	    .then(function(dbArticle) {
-  	      console.log(dbArticle);
+  	       res.json(dbArticle);
   	    })
   	    .catch(function(err) {
-  	      return res.json(err);
   	    });
       });
     });

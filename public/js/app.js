@@ -57,3 +57,27 @@ $(".note-button").on("click", function() {
   		$(".your-notes").append(data.note.body)
 	});
 });
+
+$("#scrape").on("click", function() {
+	var added = false;
+	$.ajax({
+		method: "GET",
+		url: "/scrape"
+	}).then(function(data) {
+		location.reload();
+		if(data) {
+			added = true;
+		}
+	})
+
+	setTimeout(function() {
+		if(!added) {
+			$("#message").text("No new articles");
+		} else {
+			$("#message").text("New Articles Added");
+		}
+	}, 1000);
+	
+	
+})
+
