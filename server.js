@@ -20,7 +20,7 @@ app.use(express.static("public"));
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 
-app.listen(PORT, function() {
+app.listen(process.env.PORT || PORT, function() {
   console.log("App running on port " + PORT + "!");
 });
 
