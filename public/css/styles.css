@@ -1,5 +1,6 @@
 i {
-	font-size: 30px
+	font-size: 30px;
+	cursor: pointer;
 }
 
 i.true {

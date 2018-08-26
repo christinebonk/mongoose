@@ -7,15 +7,7 @@ var cheerio = require("cheerio");
 function routes(app) {
 
   app.get("/", function(req, res){
-    db.Article.find({})
-      .then(function(dbArticle) {
-        var aObj = { articles: dbArticle }
-        res.render("index", aObj)
-      })
-      .catch(function(err) {
-        res.json(err);
-      });
-    
+    window.location.href = "/a"; 
   });
 
   app.get("/a", function(req, res){
