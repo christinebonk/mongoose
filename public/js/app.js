@@ -26,7 +26,7 @@ $(document).ready(function(){
   });
 
 
-$("#add-note").on("click", function() {
+$(".add-note").on("click", function() {
   var id = $(this).attr("data-id");
   var note = $(`#note${id}`).val() 
   console.log(note);
@@ -40,4 +40,20 @@ $("#add-note").on("click", function() {
       console.log(data);
     });
   $(`#note${id}`).val("");
+});
+
+
+$(".note-button").on("click", function() {
+	console.log("bla")
+  $(".your-notes").empty();
+  // Save the id from the p tag
+  var id = $(this).attr("data-id");
+  $.ajax({
+    method: "GET",
+    url: "/articles/" + id
+  })
+    .then(function(data) {
+    	console.log(data);
+  		$(".your-notes").append(data.note.body)
+	});
 });

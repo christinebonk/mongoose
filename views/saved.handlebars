@@ -14,7 +14,7 @@
 		  <i id="delete" class="material-icons" data-id={{this._id}}>delete</i>
 	</div>
 	<div class="article-note">
-		  <i id="note" class="material-icons modal-trigger modal-trigger" href="#modal{{this._id}}" data-id={{this._id}}>create</i>
+		  <i class="note-button material-icons modal-trigger modal-trigger" href="#modal{{this._id}}" data-id={{this._id}}>create</i>
 	</div>
 	</article>
 
@@ -22,12 +22,14 @@
 	    <div class="modal-content">
 	      <h4>Your Notes for {{this.title}}</h4>
 	    </div>
+	    <div class="your-notes">
+	    </div>
 	    <form>
 	    	<label for="note">Notes</label>
 	    	<input type="text" name="note" id="note{{this._id}}">
 	    </form>
 	    <div class="modal-footer">
-	      <a href="#" id="add-note" data-id={{this._id}} class="modal-close waves-effect waves-green btn-flat">Add Note</a>
+	      <a href="#" data-id={{this._id}} class="modal-close add-note waves-effect waves-green btn-flat">Add Note</a>
 	      <a href="#" class="modal-close waves-effect waves-green btn-flat">Close</a>
 	    </div>
   	</div>
