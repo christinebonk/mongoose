@@ -24,3 +24,20 @@ $(".article-delete").on("click", "#delete", function(){
 $(document).ready(function(){
     $('.modal').modal();
   });
+
+
+$("#add-note").on("click", function() {
+  var id = $(this).attr("data-id");
+  var note = $(`#note${id}`).val() 
+  console.log(note);
+  $.ajax({
+    method: "POST",
+    url: "/articles/" + id,
+    data: {
+      body: note }
+  })
+    .then(function(data) {
+      console.log(data);
+    });
+  $(`#note${id}`).val("");
+});
