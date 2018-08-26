@@ -129,5 +129,12 @@ span {
 	.article-right {
 		width: 20%;
 	}
+
+	.nav-wrapper .brand-logo {
+		padding-left: 0px;
+		font-size: 15px;
+	}
+
+
 }
 
