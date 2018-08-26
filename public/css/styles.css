@@ -18,6 +18,16 @@ html {
 	padding-left: 10px;
 }
 
+/*Message*/
+
+h5 {
+	text-align: center;
+	color: white;
+}
+
+#message-container {
+	background: #E64398;
+}
 
 /*Articles*/
 article {
@@ -65,11 +75,38 @@ h3 {
 .article-right i {
 	font-size: 40px;
 	cursor: pointer;
+	color: #11115a;
+}
+
+.article-right i:hover {
+	color: #F172A1;
+	transition: 0.3s color ease;
 }
 
 i.true {
 	color: #E64398;
 }
+
+.note-button {
+	padding: 15px;
+}
+
+/*Modal*/
+
+.modal {
+	padding: 20px;
+}
+
+span {
+	color: #E64398;
+}
+
+.your-notes {
+	font-size: 20px;
+	padding-bottom: 20px;
+}
+
+/*Media Queries*/
 
 @media only screen and (max-width: 992px) {
 	article {

@@ -22,13 +22,16 @@
 
 	<div id="modal{{this._id}}" class="modal">
 	    <div class="modal-content">
-	      <h4>Your Notes for {{this.title}}</h4>
+	      <h4>Your Notes for <span>{{this.title}}</span></h4>
 	    </div>
-	    <div class="your-notes">
-	    </div>
+	    <div><p>Your Note:</p>
+		    <div class="your-notes">
+		    </div>
+		</div>
 	    <form>
-	    	<label for="note">Notes</label>
+	    	<label for="note">Add Note:</label>
 	    	<input type="text" name="note" id="note{{this._id}}">
+	    	<p id="error"></p>
 	    </form>
 	    <div class="modal-footer">
 	      <a href="#" data-id={{this._id}} class="modal-close add-note waves-effect waves-green btn-flat">Add Note</a>

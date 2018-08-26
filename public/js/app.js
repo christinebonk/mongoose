@@ -34,6 +34,10 @@ $(document).ready(function(){
 $(".add-note").on("click", function() {
   var id = $(this).attr("data-id");
   var note = $(`#note${id}`).val() 
+  $("#error").empty();
+  if (note == "") {
+  	return
+  }
   console.log(note);
   $.ajax({
     method: "POST",
