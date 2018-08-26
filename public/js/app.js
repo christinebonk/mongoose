@@ -1,4 +1,4 @@
-$(".article-save").on("click", "#save", function(){
+$(".article-right").on("click", "#save", function(){
 	var id = $(this).attr("data-id");
 	$(this).css("color","#E64398");
 	$.ajax ({

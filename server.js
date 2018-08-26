@@ -12,7 +12,6 @@ var routes = require("./controllers/controllers.js");
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI, function(){
-    mongoose.connection.db.dropDatabase();
 });
 
 app.use(bodyParser.urlencoded({ extended: true }));
