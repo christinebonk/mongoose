@@ -7,7 +7,14 @@ var cheerio = require("cheerio");
 function routes(app) {
 
   app.get("/", function(req, res){
-    window.location.href = "/a"; 
+    db.Article.find({}).sort('-created_at')
+      .then(function(dbArticle) {
+        var aObj = { articles: dbArticle }
+        res.render("index", aObj)
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
   });
 
   app.get("/a", function(req, res){

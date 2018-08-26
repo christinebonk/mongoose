@@ -12,7 +12,7 @@ var routes = require("./controllers/controllers.js");
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
-
+routes(app);
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 app.use(express.static("public"));
@@ -24,6 +24,6 @@ app.listen(PORT, function() {
   console.log("App running on port " + PORT + "!");
 });
 
-routes(app);
+
 
 

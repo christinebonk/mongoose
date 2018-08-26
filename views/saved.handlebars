@@ -10,11 +10,13 @@
 		<h3>{{this.author}}</h3>
 		<p>{{this.summary}}</p>
 	</div>
-	<div class="article-delete">
-		  <i id="delete" class="material-icons" data-id={{this._id}}>delete</i>
-	</div>
-	<div class="article-note">
-		  <i class="note-button material-icons modal-trigger modal-trigger" href="#modal{{this._id}}" data-id={{this._id}}>create</i>
+	<div class="article-right">
+		<div class="article-delete">
+			  <i id="delete" class="material-icons" data-id={{this._id}}>delete</i>
+		</div>
+		<div class="article-note">
+			  <i class="note-button material-icons modal-trigger modal-trigger" href="#modal{{this._id}}" data-id={{this._id}}>create</i>
+		</div>
 	</div>
 	</article>
 

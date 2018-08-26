@@ -1,6 +1,6 @@
 $(".article-save").on("click", "#save", function(){
 	var id = $(this).attr("data-id");
-	$(this).css("color","red");
+	$(this).css("color","#E64398");
 	$.ajax ({
 		method: "PUT",
 		url: "/saved/" + id
