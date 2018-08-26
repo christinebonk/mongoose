@@ -11,7 +11,9 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines
 var routes = require("./controllers/controllers.js");
 
 mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, function(){
+    mongoose.connection.db.dropDatabase();
+});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 routes(app);
