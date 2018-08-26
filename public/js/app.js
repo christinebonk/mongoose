@@ -25,6 +25,11 @@ $(document).ready(function(){
     $('.modal').modal();
   });
 
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+      
+
 
 $(".add-note").on("click", function() {
   var id = $(this).attr("data-id");

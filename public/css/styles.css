@@ -14,6 +14,9 @@ html {
 	background: #F172A1;
 }
 
+.nav-wrapper .brand-logo {
+	padding-left: 10px;
+}
 
 
 /*Articles*/
@@ -22,8 +25,9 @@ article {
 }
 
 article img {
-	border: 5px solid #B39BC8;
+	border: 10px solid #B39BC8;
 	max-width: 100%;
+	border-radius: 10px;
 }
 
 aside {
@@ -65,5 +69,28 @@ h3 {
 
 i.true {
 	color: #E64398;
+}
+
+@media only screen and (max-width: 992px) {
+	article {
+		flex-wrap: wrap;
+	}
+	aside {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	h2 {
+		margin-top: 0;
+	}
+
+	.article-middle {
+		width: 80%;
+	}
+
+	.article-right {
+		width: 20%;
+	}
 }
 

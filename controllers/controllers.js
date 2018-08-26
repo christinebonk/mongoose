@@ -6,10 +6,6 @@ var cheerio = require("cheerio");
 
 function routes(app) {
 
-  app.get("/test", function(req,res) {
-    res.render("index");
-  })
-
   app.get("/", function(req, res){
     db.Article.find({}).sort('-created_at')
       .then(function(dbArticle) {

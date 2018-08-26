@@ -15,7 +15,8 @@
 <body>
 	<nav>
 	    <div class="nav-wrapper">
-	      <a href="/" class="brand-logo">Mongoose Project</a>
+	      <a href="/" class="brand-logo">Jacobin Scraper</a>
+	      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 	      <ul id="nav-mobile" class="right hide-on-med-and-down">
 	        <li><a href="/">Home</a></li>
 	        <li><a href="/myarticles">Saved Articles</a></li>
@@ -23,6 +24,12 @@
 	      </ul>
 	    </div>
  	 </nav>
+
+ 	 <ul class="sidenav" id="mobile-demo">
+    	<li><a href="/">Home</a></li>
+        <li><a href="/myarticles">Saved Articles</a></li>
+        <li><a href="#" id="scrape">Scrape New Articles</a></li>
+ 	 </ul>
 	<header>
 		<h1>{{title}}</h1>
 	</header>
